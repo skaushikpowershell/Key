@@ -3,7 +3,12 @@ import os
 import sys
 cmd = 'git clone git@github.com:skaushikpowershell/Key.git'
 os.system(cmd)
-encryppasswd = b'gAAAAABe3kUIbTvxaNqhI9lQGtwrrzJsHiBHUb-crCqn2lTxMxSs37zM8CyLJG1qLI7Iy1dRMpP9VabSJSlzPPzs-nkldIcIsS7gYBk-5pEuWfs2XtFmFV0='
+with open ("key.txt", "r") as myfile:
+    encryppasswd=myfile.readlines()
+print (encryppasswd)
+String_encryppasswd = ' '.join(map(str, key)) 
+print(String_encryppasswd) 
+#encryppasswd = b'gAAAAABe3kUIbTvxaNqhI9lQGtwrrzJsHiBHUb-crCqn2lTxMxSs37zM8CyLJG1qLI7Iy1dRMpP9VabSJSlzPPzs-nkldIcIsS7gYBk-5pEuWfs2XtFmFV0='
 print (encryppasswd)
 key = b'pRmgMa8T0INjEAfksaq2aafzoZXEuwKI7wDe4c1F8AY='
 cipher_suite = Fernet(key)
